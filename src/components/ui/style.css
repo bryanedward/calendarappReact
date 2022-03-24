@@ -1,0 +1,18 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem .2rem;
+    border-bottom: 1px solid black;
+}
+
+.navbar span{
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.navbar button{
+    width: 70px;
+    background: whitesmoke;
+}
