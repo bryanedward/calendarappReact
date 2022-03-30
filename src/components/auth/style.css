@@ -1,4 +1,3 @@
-
 .loginscreen{
     height: 100vh;
     display: grid;
@@ -27,14 +26,15 @@
     background-color: rgb(55, 133, 223);
 }
 
-form{
+.form__screen{
     padding: .1rem 1rem 3rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-input{
+
+.form__screen input{
     width: 85%;
     box-sizing: border-box;
     border: none;
@@ -44,7 +44,7 @@ input{
 }
 
 
-button{
+.form__screen button{
     background: none;
     outline: none;
     border: none;

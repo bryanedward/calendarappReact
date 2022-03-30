@@ -7,7 +7,7 @@ export const LoginScreen = () => {
             <div className='screen__form'>
                 <div className='screen__register'>
                     <h4>Ingreso</h4>
-                    <form action="">
+                    <form action="" className='form__screen'>
                         <input type="text" placeholder='correo'/>
                         <input type="text" placeholder='contraseña'/>
                         <button type='submit'>Acceder</button>
@@ -15,7 +15,7 @@ export const LoginScreen = () => {
                 </div>
                 <div className='screen__login'>
                     <h4>Registro</h4>
-                    <form action="">
+                    <form action="" className='form__screen'>
                         <input type="text"  placeholder='nombre'/>
                         <input type="text" placeholder='correo'/>
                         <input type="text"  placeholder='contraseña'/>

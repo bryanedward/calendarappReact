@@ -1,0 +1,20 @@
+.modal-fondo {
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+}
+  
+  .form__input textarea{
+    resize: none;
+  }
+  
+  .react-datetime-picker__wrapper{
+    align-items: center;
+  }
+
+  .calendarformat{
+    height: 90vh;
+  }
