@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ui } from '../../actions/ui';
 import { setActive } from '../../actions/note';
 import { BtnAdd } from '../ui/BtnAdd';
+import { BtnDelete } from '../ui/BtnDelete';
 const localizer = momentLocalizer(moment)
 moment.locale('es')
 
@@ -19,6 +20,7 @@ export const CalendarScreen = () => {
   const [value, setvalue] = useState(localStorage.getItem('lastView') || 'month')
   const dispatch = useDispatch()
   const {event} = useSelector(state => state.calendarNote)
+  const {active} = useSelector(state => state.calendarNote)
 
   const eventStyle = (e) =>{
     const style ={
@@ -62,6 +64,7 @@ export const CalendarScreen = () => {
           event: CalendarEvent
         }}
         />
+        <BtnDelete visible = {active}/>
         <BtnAdd/>
       <CalendarModal/>
     </div>

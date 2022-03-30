@@ -33,7 +33,7 @@ export const ContainerForm = () => {
         e.preventDefault()
         const note = {
             ...value,
-            id: new Date().getDate(),
+            id: new Date().getMilliseconds(),
             user: {
                 uid: '1',
                 name: 'edwards'

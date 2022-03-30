@@ -5,10 +5,9 @@ export const setActive = (note) => ({
     payload: note
 })
 
-
 export const addNew = (note) => ({
     type: types.eventAddNew,
-    payload:note
+    payload: note
 })
 
 export const clearActive = () => ({
