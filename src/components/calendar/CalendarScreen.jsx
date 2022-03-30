@@ -7,30 +7,20 @@ import 'moment/locale/es'
 import { CalendarEvent } from './CalendarEvent';
 import { useState } from 'react';
 import { CalendarModal } from './CalendarModal';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ui } from '../../actions/ui';
 import { setActive } from '../../actions/note';
 import { BtnAdd } from '../ui/BtnAdd';
 const localizer = momentLocalizer(moment)
 moment.locale('es')
 
-const myEventsList = [{
-  title: 'mi cumple',
-  start: moment().toDate(),
-  end:moment().toDate(),
-  bgcolor: "#fafafa",
-  user:{
-    uid:'1',
-    name:'edwards'
-  }
-}]
-
 
 export const CalendarScreen = () => {
   const [value, setvalue] = useState(localStorage.getItem('lastView') || 'month')
   const dispatch = useDispatch()
+  const {event} = useSelector(state => state.calendarNote)
 
-  const event = (e) =>{
+  const eventStyle = (e) =>{
     const style ={
       backgroundColor: 'red',
       opacity:'0.8'
@@ -45,7 +35,6 @@ export const CalendarScreen = () => {
   }
 
   const selectClick = (e) => {
-    console.log(e);
     dispatch(setActive(e))
   }
 
@@ -55,16 +44,16 @@ export const CalendarScreen = () => {
   }
 
   return (
-    <div>
+    <div className='CalendarScreen' >
       <Navbar />
       <Calendar
         localizer={localizer}
-        events={myEventsList}
+        events={event}
         startAccessor="start"
         endAccessor="end"
         className='calendarformat'
         messages={ messages}
-        eventPropGetter={event}
+        eventPropGetter={eventStyle}
         onDoubleClickEvent={dobleClick}
         onSelectEvent={selectClick}
         onView={onView}

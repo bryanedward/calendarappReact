@@ -15,6 +15,14 @@
     align-items: center;
   }
 
+  .ReactModal__Overlay {
+    z-index: 100;
+}
+
   .calendarformat{
-    height: 90vh;
+    height: 95vh;
+  }
+
+  .CalendarScreen{
+    height: 100vh;
   }

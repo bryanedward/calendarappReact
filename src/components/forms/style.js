@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Form = styled.form`
     width: 400px;
+    z-index: 100;
 `
 
 
@@ -14,6 +15,10 @@ export const Div = styled.div`
 
 export const Input = styled.input`
     padding: .4rem 0;
+`
+
+export const TextArea = styled.textarea`
+    resize: none;
 `
 
 
