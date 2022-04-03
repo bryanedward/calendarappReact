@@ -1,15 +1,35 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { starLogin } from '../../actions/auth'
+import { UseForms } from '../../hooks/UseForms'
 import './style.css'
 
 export const LoginScreen = () => {
+
+    const dispatch =  useDispatch()
+
+    const [handleValue, value] = UseForms({
+        email:"brian@gmail.com",
+        pass:"brian",
+    })
+
+    const {email, pass} = value
+
+
+    const onSubmitLogin = (e) => {
+        e.preventDefault()
+        dispatch(starLogin(email, pass))
+    }
+
+
     return (
         <div className='loginscreen'>
             <div className='screen__form'>
                 <div className='screen__register'>
                     <h4>Ingreso</h4>
-                    <form action="" className='form__screen'>
-                        <input type="text" placeholder='correo'/>
-                        <input type="text" placeholder='contraseña'/>
+                    <form action="" className='form__screen' onSubmit={onSubmitLogin}>
+                        <input type="email" placeholder='correo' name='email' value={email} onChange={handleValue}/>
+                        <input type="password" placeholder='contraseña' name='pass' value={pass} onChange={handleValue}/>
                         <button type='submit'>Acceder</button>
                     </form>
                 </div>
