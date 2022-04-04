@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 import './style.css'
 import { useDispatch, useSelector } from 'react-redux';

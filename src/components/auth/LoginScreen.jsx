@@ -5,23 +5,16 @@ import { UseForms } from '../../hooks/UseForms'
 import './style.css'
 
 export const LoginScreen = () => {
-
     const dispatch =  useDispatch()
-
     const [handleValue, value] = UseForms({
         email:"brian@gmail.com",
-        pass:"brian",
+        password:"brian",
     })
-
-    const {email, pass} = value
-
-
+    const {email, password} = value
     const onSubmitLogin = (e) => {
         e.preventDefault()
-        dispatch(starLogin(email, pass))
+        dispatch(starLogin(email, password))
     }
-
-
     return (
         <div className='loginscreen'>
             <div className='screen__form'>
@@ -29,7 +22,7 @@ export const LoginScreen = () => {
                     <h4>Ingreso</h4>
                     <form action="" className='form__screen' onSubmit={onSubmitLogin}>
                         <input type="email" placeholder='correo' name='email' value={email} onChange={handleValue}/>
-                        <input type="password" placeholder='contraseña' name='pass' value={pass} onChange={handleValue}/>
+                        <input type="password" placeholder='contraseña' name='password' value={password} onChange={handleValue}/>
                         <button type='submit'>Acceder</button>
                     </form>
                 </div>

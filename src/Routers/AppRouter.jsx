@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom"
+import {  HashRouter, Route, Routes } from "react-router-dom"
 import { LoginScreen } from "../components/auth/LoginScreen";
 import { CalendarScreen } from '../components/calendar/CalendarScreen';
 

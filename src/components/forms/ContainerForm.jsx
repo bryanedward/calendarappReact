@@ -21,7 +21,7 @@ export const ContainerForm = () => {
     const [value, setValue] = useState(initialSate)
     const dispatch = useDispatch()
     const {active} = useSelector(state => state.calendarNote)
-    const { title, description, start, end } = value
+    const { title, description } = value
 
     useEffect(() => {
         if(active){
