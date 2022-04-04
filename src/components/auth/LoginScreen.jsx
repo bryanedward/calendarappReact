@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { starLogin } from '../../actions/auth'
+import Swal from 'sweetalert2'
+import {  RegisterLogin, starLogin } from '../../actions/auth'
 import { UseForms } from '../../hooks/UseForms'
 import './style.css'
 
@@ -10,11 +11,32 @@ export const LoginScreen = () => {
         email:"brian@gmail.com",
         password:"brian",
     })
+    const [handleValueRegister, valueRegister] =  UseForms({
+        nameRegister:"karla",
+        emailRegister:"karla@gmail.com",
+        passRegister:"karla"
+    })
     const {email, password} = value
+    const {nameRegister,emailRegister, passRegister} = valueRegister
+
     const onSubmitLogin = (e) => {
         e.preventDefault()
         dispatch(starLogin(email, password))
     }
+
+    const onSubmitRegister = (e) => {
+        e.preventDefault()
+        if(nameRegister.trim() !== "" && emailRegister.trim() !== "" && passRegister.trim() !== ""){
+            dispatch(RegisterLogin(nameRegister, emailRegister, passRegister))
+        }else{
+             Swal.fire({
+                icon: 'error',
+                title: 'Completar datos',
+                text: 'vuelva intentar',
+              })
+        }
+    }
+
     return (
         <div className='loginscreen'>
             <div className='screen__form'>
@@ -28,11 +50,10 @@ export const LoginScreen = () => {
                 </div>
                 <div className='screen__login'>
                     <h4>Registro</h4>
-                    <form action="" className='form__screen'>
-                        <input type="text"  placeholder='nombre'/>
-                        <input type="text" placeholder='correo'/>
-                        <input type="text"  placeholder='contraseña'/>
-                        <input type="text" placeholder='repetir contraseña'/>
+                    <form action="" className='form__screen' onSubmit={onSubmitRegister}>
+                        <input type="text"  placeholder='nombre' name='nameRegister' onChange={handleValueRegister} value={nameRegister}/>
+                        <input type="email" placeholder='correo'name='emailRegister'onChange={handleValueRegister} value={emailRegister}/>
+                        <input type="password"  placeholder='contraseña' name='passRegister' onChange={handleValueRegister} value={passRegister}/>
                         <button type='submit'>Registrar</button>
                     </form>
 

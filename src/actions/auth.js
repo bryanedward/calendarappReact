@@ -23,7 +23,23 @@ export const starLogin = (email, password) => {
     }
 }
 
+export const RegisterLogin = (name, email, password) => {
+    return async(dispatch) => {
+        const resp = await fetchSinToken('api/nuevo', {name, email, password},'POST')
+        const body = await resp.json()
+        if (body.ok) {
+            localStorage.setItem('token', body.token)
+            localStorage.setItem('token-init-data', new Date().getTime())
+            dispatch(login({
+                uid: body.uid,
+                name: body.name
+            }))
+        }
+    }
+}
+
 const login = (user) => ({
     type: types.authLogin,
     payload: user
 })
+
