@@ -5,6 +5,7 @@ const initialState = {
     active:null
 }
 export const calendarReducer = (state = initialState, action) => {
+    console.log(state.payload);
     switch (action.type) {
         case types.eventAddNew:
             return{
@@ -31,6 +32,11 @@ export const calendarReducer = (state = initialState, action) => {
                 ...state,
                 event: state.event.filter(e => (e.id !== state.active.id)),
                 active: null
+            }
+        case types.eventLoaded:
+            return{
+                ...state,
+                event: [...action.payload]
             }
         default:
             return state;

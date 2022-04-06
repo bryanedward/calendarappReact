@@ -6,7 +6,7 @@ export const types = {
     clearActive:'clearActive',
     updateActive: 'updateActive',
     deleteActive: 'deleteActive',
-
+    eventLoaded:'eventLoaded',
     authChecking:'authChecking',
     authCheckingFinish: 'authCheckingFinish',
     authStartLogin: 'authStartLogin',

@@ -1,5 +1,5 @@
 export const CalendarEvent = ({ event }) => {
-  const { title, description } = event
+  const { title, notes } = event
 
   return (
     <div>
@@ -7,7 +7,7 @@ export const CalendarEvent = ({ event }) => {
         {title}
       </small>
       <p>
-        {description}
+        {notes}
       </p>
     </div>
   )
