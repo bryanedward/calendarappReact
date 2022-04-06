@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogOut } from '../../actions/auth'
+import { EventLogOut } from '../../actions/note'
 import './style.css'
 
 export const Navbar = () => {
@@ -10,6 +11,7 @@ export const Navbar = () => {
 
     const btnLogOut = () => {
         disptach(startLogOut())
+        disptach(EventLogOut())
     }
 
     return (

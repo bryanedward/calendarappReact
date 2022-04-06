@@ -3,7 +3,7 @@ import moment from "moment";
 import DateTimePicker from 'react-datetime-picker';
 import { Button, Form, Div, Input, TextArea } from './style';
 import { useDispatch, useSelector } from 'react-redux';
-import { eventNewEvent, updateNote } from '../../actions/note';
+import { eventNewEvent, updateEventDatabase } from '../../actions/note';
 import { uiClose } from '../../actions/ui';
 const startValue = moment().minutes(0).seconds(0).add(1, 'hours')
 const startValueEnd = startValue.clone().add('1', 'hours')
@@ -37,7 +37,7 @@ export const ContainerForm = () => {
         }
 
         if (active) {
-            dispatch(updateNote(value))
+            dispatch(updateEventDatabase(value))
         } else {
             dispatch(eventNewEvent(note))
         }

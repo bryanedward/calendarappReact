@@ -1,14 +1,14 @@
 import React from 'react'
 import { AiFillDelete } from 'react-icons/ai'
-import { useDispatch } from 'react-redux'
-import { deleteNote } from '../../actions/note'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteEventDatabase } from '../../actions/note'
 import { DivDelete } from './style'
 export const BtnDelete = (props) => {
   const status = props.visible ? true : false
   const dispatch = useDispatch()
-
+  const {active} = useSelector(state => state.calendarNote)
   const btnDelete = () => {
-    dispatch(deleteNote())
+    dispatch(deleteEventDatabase(active))
   }
 
   return (

@@ -7,6 +7,7 @@ export const types = {
     updateActive: 'updateActive',
     deleteActive: 'deleteActive',
     eventLoaded:'eventLoaded',
+    eventLogOut: 'eventLogOut',
     authChecking:'authChecking',
     authCheckingFinish: 'authCheckingFinish',
     authStartLogin: 'authStartLogin',

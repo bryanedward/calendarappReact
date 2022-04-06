@@ -6,9 +6,9 @@ export const CalendarEvent = ({ event }) => {
       <small>
         {title}
       </small>
-      <p>
+      <small>
         {notes}
-      </p>
+      </small>
     </div>
   )
 }
