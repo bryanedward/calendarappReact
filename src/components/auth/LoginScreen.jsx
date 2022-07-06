@@ -12,7 +12,7 @@ export const LoginScreen = () => {
         password:"brian",
     })
     const [handleValueRegister, valueRegister] =  UseForms({
-        nameRegister:"karla",
+        nameRegister:"karl",
         emailRegister:"karla@gmail.com",
         passRegister:"karla"
     })
