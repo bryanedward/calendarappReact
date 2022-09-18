@@ -1,9 +1,9 @@
 import { types } from "../types/types";
 
 export const ui = () => ({
-    type: types.uiOpenModals   
-})
+  type: types.uiOpenModals,
+});
 
 export const uiClose = () => ({
-    type: types.uiCloseModals
-})
+  type: types.uiCloseModals,
+});

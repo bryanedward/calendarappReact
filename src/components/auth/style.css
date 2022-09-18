@@ -1,56 +1,52 @@
-.loginscreen{
-    height: 100vh;
-    display: grid;
-    align-content: center;
-    justify-items: center;
+.loginscreen {
+  height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
 }
 
-.screen__form{
-    display: flex;
-    box-shadow: -3px 4px 3px -1px;;
-    
+.screen__form {
+  display: flex;
+  box-shadow: -3px 4px 3px -1px;
 }
 
-.screen__form h4{
-    text-align: center;
-
+.screen__form h4 {
+  text-align: center;
 }
 
-.screen__register{
-    width: 300px;
-    background-color: whitesmoke;
+.screen__register {
+  width: 300px;
+  background-color: whitesmoke;
 }
 
-.screen__login{
-    width: 300px;
-    background-color: rgb(55, 133, 223);
+.screen__login {
+  width: 300px;
+  background-color: rgb(55, 133, 223);
 }
 
-.form__screen{
-    padding: .1rem 1rem 3rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form__screen {
+  padding: 0.1rem 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.form__screen input{
-    width: 85%;
-    box-sizing: border-box;
-    border: none;
-    margin-bottom: .7rem;
-    border-radius: .3rem;
-    padding: .5rem;
+.form__screen input {
+  width: 85%;
+  box-sizing: border-box;
+  border: none;
+  margin-bottom: 0.7rem;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
 }
 
-
-.form__screen button{
-    background: none;
-    outline: none;
-    border: none;
-    width: 100%;
-    padding: .3rem;
-    cursor: pointer;
-    font-weight: bolder;
-    font-style: italic;
+.form__screen button {
+  background: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 0.3rem;
+  cursor: pointer;
+  font-weight: bolder;
+  font-style: italic;
 }
